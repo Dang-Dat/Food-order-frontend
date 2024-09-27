@@ -62,6 +62,14 @@ const AppRoutes = () => {
             </Layout>
           }
         />
+        <Route
+          path="/admin"
+          element={
+            <Layout>
+              <></>
+            </Layout>
+          }
+        />
       </Route>
 
       <Route path="*" element={<Navigate to="/" />} />

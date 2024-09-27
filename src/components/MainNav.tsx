@@ -16,13 +16,28 @@ const MainNav = () => {
           <UsernameMenu />
         </>
       ) : (
-        <Button
-          variant="ghost"
-          className="font-bold hover:text-orange-500 hover:bg-white"
-          onClick={async () => await loginWithRedirect()}
-        >
-          Log In
-        </Button>
+        <>
+          <Button
+            variant="ghost"
+            className="font-bold hover:text-orange-500 hover:bg-white"
+            onClick={async () => await loginWithRedirect({
+              authorizationParams: {
+                screen_hint: 'signup',
+                connection: 'FoodOrder'
+              },
+
+            })}
+          >
+            Sign Up
+          </Button>
+          <Button
+            variant="ghost"
+            className="font-bold hover:text-orange-500 hover:bg-white"
+            onClick={async () => await loginWithRedirect()}
+          >
+            Log In
+          </Button>
+        </>
       )}
     </span>
   );
